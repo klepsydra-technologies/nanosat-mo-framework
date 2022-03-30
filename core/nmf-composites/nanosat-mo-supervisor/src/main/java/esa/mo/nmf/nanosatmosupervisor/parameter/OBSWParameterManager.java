@@ -38,6 +38,8 @@ import org.ccsds.moims.mo.mal.structures.IdentifierList;
 import org.ccsds.moims.mo.mal.structures.LongList;
 import org.ccsds.moims.mo.mc.parameter.structures.ParameterDefinitionDetails;
 import org.ccsds.moims.mo.mc.parameter.structures.ParameterDefinitionDetailsList;
+import org.ccsds.moims.mo.mc.parameter.structures.ParameterRawValue;
+
 import esa.mo.helpertools.helpers.HelperAttributes;
 import esa.mo.nmf.MCRegistration;
 
@@ -140,6 +142,12 @@ public class OBSWParameterManager {
     return getValue(obswParamIdentifier);
   }
 
+  public Boolean setValue(ParameterRawValue newRawValue){
+    Identifier obswParamIdentifier = 
+      new Identifier(proxyIdsToOBSWParams.get(newRawValue.getParamInstId()).getName());
+    return setValue(newRawValue.getRawValue(), obswParamIdentifier);
+  }
+
   /**
    * @param parameterID The parameter ID to test
    * @return true if the ID corresponds to one of the parameter proxies registered by this class
@@ -156,5 +164,8 @@ public class OBSWParameterManager {
    */
   private Attribute getValue(Identifier identifier) {
     return valuesProvider.getValue(identifier);
+  }
+  private Boolean setValue(Attribute rawValue, Identifier identifier){
+    return valuesProvider.setValue(rawValue, identifier);
   }
 }
