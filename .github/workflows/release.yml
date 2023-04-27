@@ -1,0 +1,39 @@
+name: Build
+on:
+  pull_request:
+    branches: [dev]
+  push:
+    branches: [dev]
+
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          token: ${{ secrets.GH_TOKEN }}
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: 8
+          distribution: adopt
+          cache: maven
+          server-id: github
+          settings-path:  ${{ github.workspace }}
+      - name: Install dependencies
+        uses: s4u/setup-maven-action@v1.2.1
+        with:
+          java-version: 8
+      - name: Publish to GitHub Packages Apache Maven
+        run: mvn deploy --batch-mode -DskipTests=true -s $GITHUB_WORKSPACE/ci_settings.xml
+        env:
+          GITHUB_USERNAME: kpsrci
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
