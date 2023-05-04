@@ -86,56 +86,6 @@
       <artifactId>cli-tool</artifactId>
       <version>${project.version}</version>
     </dependency>
-    <dependency>
-      <groupId>int.esa.nmf.sdk.examples.space</groupId>
-      <artifactId>waveform</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>int.esa.nmf.sdk.examples.space</groupId>
-      <artifactId>all-mc-services</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>int.esa.nmf.sdk.examples.space</groupId>
-      <artifactId>camera</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>int.esa.nmf.sdk.examples.space</groupId>
-      <artifactId>payloads-test</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>int.esa.nmf.sdk.examples.space</groupId>
-      <artifactId>publish-clock</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>int.esa.nmf.sdk.examples.space</groupId>
-      <artifactId>mp-space-demo</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>int.esa.nmf.sdk.examples.ground</groupId>
-      <artifactId>mp-ground-demo</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>int.esa.nmf.sdk.examples.space</groupId>
-      <artifactId>benchmark</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>int.esa.nmf.sdk.examples.space</groupId>
-      <artifactId>camera-acquisitor-system</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>int.esa.nmf.sdk.examples.space</groupId>
-      <artifactId>picture-processor</artifactId>
-      <version>${project.version}</version>
-    </dependency>
 
     <!-- Needed as the transitive dependency is not resolved properly -->
     <dependency>
@@ -154,7 +104,7 @@
         <executions>
           <execution>
             <id>default-jar</id>
-            <phase/>
+            <phase>none</phase>
           </execution>
         </executions>
       </plugin>
