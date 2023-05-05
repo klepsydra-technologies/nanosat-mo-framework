@@ -37,6 +37,9 @@ jobs:
         env:
           GITHUB_USERNAME: kpsrci
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Package
+        run: |
+          mvn clean package
       - name: Publish to GitHub Packages Apache Maven
         run: mvn deploy --batch-mode -DskipTests=true -s $GITHUB_WORKSPACE/ci_settings.xml
         env:
