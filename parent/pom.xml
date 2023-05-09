@@ -47,9 +47,9 @@
     <url>https://github.com/esa/nanosat-mo-framework/issues</url>
   </issueManagement>
   <scm>
-    <connection>scm:git:git@github.com:esa/nanosat-mo-framework.git</connection>
-    <developerConnection>scm:git:git@github.com:esa/nanosat-mo-framework.git</developerConnection>
-    <url>https://github.com/esa/nanosat-mo-framework</url>
+    <connection>scm:git:${project.scm.url}</connection>
+    <developerConnection>scm:git:${project.scm.url}</developerConnection>
+    <url>https://github.com/klepsydra-technologies/nanosat-mo-framework</url>
   </scm>
   <developers>
     <developer>
@@ -408,13 +408,10 @@
       </repositories>
       <distributionManagement>
         <repository>
-          <id>gitlab-maven</id>
-          <url>${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/maven</url>
+          <id>github</id>
+          <name>Klepsydra Maven Packages Repository</name>
+          <url>https://maven.pkg.github.com/klepsydra-technologies/kpe-ai-java</url>
         </repository>
-        <snapshotRepository>
-          <id>gitlab-maven</id>
-          <url>${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/maven</url>
-        </snapshotRepository>
       </distributionManagement>
     </profile>
   </profiles>
