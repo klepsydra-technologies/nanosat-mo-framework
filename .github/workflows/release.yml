@@ -41,5 +41,5 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "target/*.*"
-          tag: ${{ env.NEXT_RELEASE }}
+          tag: "2.1.0"
           token: ${{ secrets.GITHUB_TOKEN }}
