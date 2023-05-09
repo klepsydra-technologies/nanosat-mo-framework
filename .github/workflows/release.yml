@@ -36,10 +36,10 @@ jobs:
         run: mvn deploy --batch-mode -DskipTests=true -s $GITHUB_WORKSPACE/ci_settings.xml
         env:
           GITHUB_USERNAME: kpsrci
-          GITHUB_TOKEN: '${{ github.token }}'
+          GITHUB_TOKEN: ${{ github.token }}
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1
         with:
           artifacts: "target/*.*"
-          tag: "2.1.0"
+          tag: "2.1.1"
           token: ${{ secrets.GITHUB_TOKEN }}
