@@ -41,5 +41,5 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "target/*.*"
-          tag: "2.1.2"
+          tag: "2.0.1"
           token: ${{ secrets.GITHUB_TOKEN }}

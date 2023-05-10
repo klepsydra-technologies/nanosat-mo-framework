@@ -68,7 +68,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <!-- NMF general properties -->
-    <esa.nmf.version>2.1.0-SNAPSHOT</esa.nmf.version>
+    <esa.nmf.version>2.0.1</esa.nmf.version>
     <esa.nmf.maximum-version>2.1.100</esa.nmf.maximum-version>
     <!-- Automatically use the latest patch of each component for the current major.minor version -->
     <esa.nmf.version-qualifier>[${esa.nmf.version},${esa.nmf.maximum-version}]</esa.nmf.version-qualifier>
